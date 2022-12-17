@@ -1,0 +1,180 @@
+$add-height: 5rem;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #69bde4;
+}
+
+.todo-list {
+  width: 50rem;
+  height: 65vh;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: #eee;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 4.2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  &__function {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.list {
+  width: 100%;
+  height: 40rem;
+  padding-right: 1rem;
+  list-style: none;
+  overflow-y: auto;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: .5rem 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__checkbox-box {
+    cursor: pointer;
+  }
+
+  &__checkbox-input {
+    display: none;
+  }
+
+  &__checkbox {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #0362f0;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &__checkbox::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #0362f0;
+    opacity: 0;
+    transition: all .3s;
+  }
+
+  &__checkbox-input:checked + &__checkbox::after {
+    opacity: 1;
+  }
+
+  &__text {
+    flex: 1;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0 3rem 0 1rem;
+    white-space:pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: $add-height;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  border: 2px solid #0ab1ff;
+  background-color: #fff;
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 2.4rem;
+    color: #333;
+    background-color: transparent;
+  }
+}
+
+.btn {
+  min-width: 8rem;
+  width: fit-content;
+  padding: 0 1rem;
+  height: $add-height;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 400;
+  background-color: #1367e6;
+  transition: all .3s;
+  cursor: pointer;
+
+  &:hover {
+    background: #0448af;
+    font-size: 2.6rem;
+  }
+
+  &_s {
+    width: fit-content;
+    height: 3.5rem;
+    font-size: 1.8rem;
+
+    &:hover {
+      font-size: 2rem;
+    }
+  }
+
+  &_m-r {
+    margin-right: 1rem;
+  }
+
+  &_green {
+    background-color: #12a56d;
+
+    &:hover {
+      background-color: #0a6e48;
+    }
+  }
+
+  &_red {
+    background-color: #e74b4b;
+
+    &:hover {
+      background-color: #a02b2b;
+    }
+  }
+}
